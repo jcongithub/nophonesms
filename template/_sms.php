@@ -8,7 +8,6 @@
 		$number = $activeNumbers[0];
 	}	
 	$smsList = $nophonesms->getLastMessages($number, 20);
-	$host = $nophonesms->getHost();
 ?>
 
 <div class="row">

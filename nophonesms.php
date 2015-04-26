@@ -63,9 +63,8 @@
 
 		
 		
-		public function getHost(){
-			$httpReferer = $_SERVER['HTTP_REFERER'];
-			return parse_url($httpReferer)['host'];
+		public function getHomeURL(){
+			return "http://".$_SERVER['HTTP_HOST'];
 		}
 	
 	}

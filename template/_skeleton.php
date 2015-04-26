@@ -1,6 +1,6 @@
 <?php 
 	require 'nophonesms.php';
-	$host = $nophonesms->getHost();
+	$home = $nophonesms->getHomeURL();
 	$activeNumbers = $nophonesms->getCurrentNumbers();	
 ?>
 
@@ -58,7 +58,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/<?php echo $host?>">No Phone SMS</a>
+                <a class="navbar-brand" href="<?php echo $home?>">No Phone SMS</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -91,9 +91,7 @@
 	  <p class="text-center">NoPhoneSMS power by <a href="http://www.allkall.com">AllKall.COM</a></p>
 	</div></div>
 
-    <!-- jQuery Version 1.11.1 -->
-    <script src="js/jquery.js"></script>
-    <!-- Bootstrap Core JavaScript -->
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 	<script>
