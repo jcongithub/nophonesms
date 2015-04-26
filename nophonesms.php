@@ -1,6 +1,6 @@
 <?php
 	require 'rb.phar';
-
+	
 	final class SMS{
 		private $from;
 		private $to;
@@ -34,9 +34,16 @@
 			$this->country = $country;
 			$this->number = $number;
 		}
+		public $smsCount;
 	}
 	
 	final class NoPhoneSMS{
+		const TABLE_NAME = "sms";
+		public function __construct(){
+                        R::setup('mysql:host=localhost;dbname=thrzerze_iplocation', 'thrzerze', '1YelloW-2');
+                        R::dispense(self::TABLE_NAME);
+                }
+
 		public function getCurrentNumbers(){
 			$numbers = [new Number('2123334444', 'US'), 
 						new Number('5162344567', 'Poland'), 
@@ -45,13 +52,16 @@
 						new Number('4566668888', 'Japan')]; 
 			return $numbers;
 		}
+
 		public function getLastMessages($number, $count){
-			$smsList = [];
-			$i = 0;
-			for($i=0; $i < $count; $i++){
-				$smsList[$i] = new SMS("1234567890", $number, '2015-04-01 12:13:14', "this is a test");
-			}
-			return $smsList;
+			$result = R::findAll(self::TABLE_NAME, 'order by time desc', []);
+
+			$smsArray = [];
+                        foreach($result as $row){
+                                $sms = new SMS($row['from'], $row['to'], $row['time'], $row['content']);
+                                array_push($smsArray, $sms);
+                        }
+                        return $smsArray;
 		}
 		
 		public function getNumbersForSell(){

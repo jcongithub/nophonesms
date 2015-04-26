@@ -25,7 +25,7 @@
 			$logger->info("Message type:".$type." is not supported yet");
 		}
 
-		$freesms->saveSMS($from, $to, $type, $content, date('Y-m-d H:i:s'));
+		$nophonesms->saveSMS($from, $to, $type, $content, date('Y-m-d H:i:s'));
 		http_response_code(200);
 	}
 ?>
