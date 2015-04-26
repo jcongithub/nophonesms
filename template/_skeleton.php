@@ -98,7 +98,7 @@
 		$(document).ready(function(){
 			$("#number").change(function(){
 				var selectedNumber = $("#number").val();
-				window.location = "/sms.php?number=" + selectedNumber;
+				window.location = "sms.php?number=" + selectedNumber;
 			});
 		});
 	</script>

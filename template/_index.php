@@ -63,7 +63,7 @@
 	                        <p class="text-muted">Great for privatly register a website</p>
 	                        <p class="text-muted">Great for giving  to people for them to call you short period time</p>
 	                        <p class="text-muted">Very cheap starts $1.99</p>
-	                        <a class="btn btn-primary btn-lg" href="/buyvirtualnumber.php" role="button">Buy Virtual Number »</a>
+	                        <a class="btn btn-primary btn-lg" href="buyvirtualnumber.php" role="button">Buy Virtual Number »</a>
 	                    </div>
 	                </div>
 	            </div>
