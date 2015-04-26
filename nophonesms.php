@@ -1,4 +1,6 @@
 <?php
+	require 'rb.phar';
+
 	final class SMS{
 		private $from;
 		private $to;
@@ -60,11 +62,22 @@
 					new Number('4566668888', 'Japan')];
 			return $numbers;
 		}
-
+		public function saveSMS($from, $to, $type, $content, $time){
+			$sms = R::dispense(self::TABLE_NAME);
+			$sms->from = $from;
+			$sms->to = $to;
+			$sms->type = $type;
+			$sms->content = $content;
+			$sms->time = $time;
+				
+			R::store($sms);
+		}
+		
 		
 		
 		public function getHomeURL(){
-			return "http://".$_SERVER['HTTP_HOST'];
+			//return "http://".$_SERVER['HTTP_HOST'];
+			return "http://www.3000freegames.com/nophonesms";
 		}
 	
 	}

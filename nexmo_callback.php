@@ -1,5 +1,5 @@
 <?php
-	require('freesms.php');
+	require('nophonesms.php');
 	require('logger.php');
 
 	if(!$_GET){
